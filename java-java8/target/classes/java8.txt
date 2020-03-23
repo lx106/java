@@ -1,0 +1,94 @@
+java8 的新特性
+1. 避免空指针异常的 Optional 类
+2. Stream API
+3. lambda 表达式
+4. 全新的时间日期API
+5. 接口中的默认方法和静态方法
+6. 函数式接口 @FunctionalInterface
+7. 方法引用与构造器引用
+
+
+0. 各类代码优化,底层优化 例如HashMap , PermGen改为Metaspace, jvm支持各种语言 scala
+
+
+
+ Predicate<T> boolean test(T t);
+ Consumer<T> void accept(T t);
+ Function<T,R> R apply(T var1);
+ Supplier<T> T get();
+
+ 方法引用
+ 构造函数引用
+
+
+
+Stream API (过滤、切片、查找、匹配、映射和归约)
+使用流三部曲
+一个数据源
+一个中间操作链
+一个终端操作
+
+流只能使用一次
+                   中间操作
+
+操 作     类 型     返回类型     操作参数     函数描述符
+filter    中间      Stream<T>  Predicate<T>   T -> boolean
+map       中间       Stream<R>  Function<T,R>  T -> R
+limit     中间      Stream<T>
+sorted    中间      Stream<T>  Comparator<T>  (T, T) -> int
+distinct  中间       Stream<T>
+
+                    终端操作
+操 作   类 型  目 的
+forEach 终端  消费流中的每个元素并对其应用 Lambda。这一操作返回 void
+count   终端  返回流中元素的个数。这一操作返回 long
+collect 终端  把流归约成一个集合，比如 List 、 Map 甚至是 Integer
+
+终端操作: 终端操作会从流的流水线生成结果。其结果是任何不是流的值
+
+
+扁平化flatMap
+
+查找和匹配
+allMatch 、 anyMatch 、 noneMatch 、 findFirst 和 findAny
+
+findAny
+findFirst 找到第一个元素 在并行上限制更多
+
+int product = numbers.stream().reduce(1, (a, b) -> a * b);
+int sum = numbers.stream().reduce(0, Integer::sum);
+Optional<Integer> sum = numbers.stream().reduce((a, b) -> (a + b));
+
+int count = menu.stream()
+.map(d -> 1)
+.reduce(0, (a, b) -> a + b);
+
+int sum = numbers.parallelStream().reduce(0, Integer::sum);
+
+无限流
+Stream.iterate(new int[]{0, 1},
+                t -> new int[]{t[1],t[0] + t[1]})
+                .limit(10)
+                .map(t -> t[0])
+                .forEach(System.out::println);
+
+        Stream.generate(Math::random)
+                .limit(5)
+                .forEach(System.out::println);
+
+IntStream ones = IntStream.generate(() -> 1);
+
+收集器
+
+Collectors.maxBy
+Collectors.minBy
+
+分组
+public enum CaloricLevel { DIET, NORMAL, FAT }
+Map<CaloricLevel, List<Dish>> dishesByCaloricLevel = menu.stream().collect(
+groupingBy(dish -> {
+if (dish.getCalories() <= 400) return CaloricLevel.DIET;
+else if (dish.getCalories() <= 700) return
+CaloricLevel.NORMAL;
+else return CaloricLevel.FAT;
+} ));

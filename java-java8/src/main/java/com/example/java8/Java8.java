@@ -1,0 +1,62 @@
+package com.example.java8;
+
+import org.junit.Test;
+
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
+/**
+ * 
+ * @author liuxun
+ * 
+ * 1 public interface Consumer<T>
+ *    void accept(T t);
+ *  
+ * 2.public interface Supplier<T>
+ *    T get();              
+ * 
+ * 3.public interface Function<T, R>
+ *    R apply(T t); 
+ * 
+ * 4.public interface Predicate<T>
+ *    boolean test(T t);
+ */
+public class Java8 {
+
+	@Test
+	public void test1(){
+	  happy(50L, (d) -> System.out.println("消费了"+d));
+	}
+	public void happy(double money,Consumer<Double> consumer){
+		consumer.accept(money);
+	}
+	@Test
+	public void test2(){
+		int i = suport(() -> 10);
+		System.out.println(i);
+	}
+	public int suport(Supplier<Integer> sup){
+		return sup.get();
+	}
+	@Test
+	public void test3(){
+		int i = 10 ;
+		int d =0 ;
+		d = function(i, (Integer x) -> x);
+	}
+	public Integer function(Integer t,Function<Integer,Integer> fun){
+		return fun.apply(t);
+	}
+	@Test
+	public void test4(){
+		int i =8;
+		if(Predicate1(i, (x) -> x%2 ==0)){
+			System.out.println("oushu");
+		}
+	}
+	public boolean Predicate1(Integer i,Predicate<Integer> pre){
+		return pre.test(i);
+	}
+}
