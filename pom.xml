@@ -18,6 +18,7 @@
         <module>java-api-test</module>
         <module>java-exception</module>
         <module>java-websocket</module>
+        <module>java-leetcode</module>
     </modules>
 
     <packaging>pom</packaging>
