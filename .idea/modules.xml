@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java.iml" filepath="$PROJECT_DIR$/java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-api-test/java-api-test.iml" filepath="$PROJECT_DIR$/java-api-test/java-api-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-design-pattern/java-design-pattern.iml" filepath="$PROJECT_DIR$/java-design-pattern/java-design-pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-exception/java-exception.iml" filepath="$PROJECT_DIR$/java-exception/java-exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-java8/java-java8.iml" filepath="$PROJECT_DIR$/java-java8/java-java8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-jvm/java-jvm.iml" filepath="$PROJECT_DIR$/java-jvm/java-jvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-leetcode/java-leetcode.iml" filepath="$PROJECT_DIR$/java-leetcode/java-leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-lock/java-lock.iml" filepath="$PROJECT_DIR$/java-lock/java-lock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-nio/java-nio.iml" filepath="$PROJECT_DIR$/java-nio/java-nio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-socket/java-socket.iml" filepath="$PROJECT_DIR$/java-socket/java-socket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-thread/java-thread.iml" filepath="$PROJECT_DIR$/java-thread/java-thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-websocket/websocket.iml" filepath="$PROJECT_DIR$/java-websocket/websocket.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="java-leetcode" />
+        <module name="websocket" />
+        <module name="java-exception" />
+        <module name="java-nio" />
+        <module name="java-lock" />
+        <module name="java-jvm" />
+        <module name="java-design-pattern" />
+        <module name="java-thread" />
+        <module name="java-api-test" />
+        <module name="java-socket" />
+        <module name="java-java8" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="java" target="1.5" />
+      <module name="java-api-test" target="1.5" />
+      <module name="java-design-pattern" target="1.5" />
+      <module name="java-exception" target="1.5" />
+      <module name="java-java8" target="1.8" />
+      <module name="java-jvm" target="1.5" />
+      <module name="java-leetcode" target="1.5" />
+      <module name="java-lock" target="1.8" />
+      <module name="java-nio" target="1.5" />
+      <module name="java-socket" target="1.5" />
+      <module name="java-thread" target="1.8" />
+      <module name="websocket" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
